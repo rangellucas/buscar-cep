@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Buscar CEP</title>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	</head>
+	<body ng-app="myApp">
+
+		<div ng-controller="myCtrl" class="container">
+
+			<div class="clearfix">&nbsp;</div>
+
+			<div class="jumbotron">
+		      <div class="container">
+		        	<div class="col-md-6">
+		        		<h2 class="display-3">Form</h2>
+		        		<div class="form-group">
+			        		<form class="form-inline" ng-submit="findCep()">
+			        			<label>Digite o cep:</label>
+				        		<input type="text" class="form-control" name="cep" ng-model="cep" />
+				        		<button type="submit" class="btn btn-primary btn-md" role="button">Buscar Cep</button>
+			        		</form>				        		
+		        		</div>
+		        		<div ng-show="showform">
+			        		<div class="form-group">
+				        		<label>Bairro:</label>
+				        		<input type="text" class="form-control" name="bairro" ng-model="bairro" />
+			        		</div>
+			        		<div class="form-group">
+				        		<label>Complemento:</label>
+				        		<input type="text" class="form-control" name="complemento" ng-model="complemento" />
+			        		</div>
+			        		<div class="form-group">
+				        		<label>Localidade:</label>
+				        		<input type="text" class="form-control" name="localidade" ng-model="localidade" />
+			        		</div>
+			        		<div class="form-group">
+				        		<label>Logradouro:</label>
+				        		<input type="text" class="form-control" name="logradouro" ng-model="logradouro" />
+			        		</div>
+			        		<div class="form-group">
+				        		<label>UF:</label>
+				        		<input type="text" class="form-control" name="uf" ng-model="uf" />
+			        		</div>
+			        		<div class="form-group">
+				        		<label>Unidade:</label>
+				        		<input type="text" class="form-control" name="unidade" ng-model="unidade" />
+			        		</div>
+		        		</div>
+		        	</div>
+			        <div class="col-md-6">
+			        	<h2 class="display-3">JSON</h2>
+			        	<div class="card p-t-1">
+							<p class="p-l-1"> { </p>
+							<p class="p-l-3"> cep: {{ cep }}, </p>
+							<p class="p-l-3"> bairro: {{ bairro }}, </p>
+							<p class="p-l-3">	complemento: {{ complemento }}, </p>
+							<p class="p-l-3">	gia: {{ gia }}, </p>
+							<p class="p-l-3">	ibge: {{ ibge }}, </p>
+							<p class="p-l-3">	localidade: {{ localidade }}, </p>
+							<p class="p-l-3">	logradouro: {{ logradouro }}, </p>
+							<p class="p-l-3">	uf: {{ uf }}, </p>
+							<p class="p-l-3">	unidade: {{ unidade }}, </p>
+							<p class="p-l-1"> } </p>
+						</div>
+					</div>		        
+		      </div>
+		    </div>
+			
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
+		<script src="js/tether.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
+
+	</body>
+</html>
