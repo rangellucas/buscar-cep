@@ -21,7 +21,7 @@
 			        		<form class="form-inline" ng-submit="findCep()">
 			        			<label>Digite o cep:</label>
 				        		<input type="text" class="form-control" name="cep" ng-model="cep" />
-				        		<button type="submit" class="btn btn-primary btn-md" role="button">Buscar Cep</button>
+				        		<button type="submit" class="btn btn-primary btn-md" role="button" ng-click="carregarNoMapa(cep)">Buscar Cep</button>
 			        		</form>				        		
 		        		</div>
 		        		<div ng-show="showform">
@@ -66,7 +66,11 @@
 							<p class="p-l-3">	unidade: {{ unidade }}, </p>
 							<p class="p-l-1"> } </p>
 						</div>
-					</div>		        
+					</div>	
+					<div class="col-md-12">
+						<div id="mapa" style="height: 500px; width: 100%">
+        				</div>
+					</div>	        
 		      </div>
 		    </div>
 			
@@ -75,6 +79,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBxqPpiJJf4PtMIheRlOGEHtxGFgIY1upU"></script>
 		<script src="js/tether.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="app.js"></script>
